@@ -47,13 +47,6 @@ A full-featured online grocery store built with Django 3.2.25, specializing in p
 - ✅ Wishlist Count Badge in Navbar
 - ✅ Persistent Wishlist Storage
 
-### Checkout & Orders
-- ✅ Secure Checkout Process
-- ✅ Multiple Shipping Address Selection
-- ✅ Order Placement
-- ✅ Order History
-- ✅ Payment Integration Support
-
 ### Contact & Support
 - ✅ Contact Form with Email Functionality
 - ✅ Gmail SMTP Integration
@@ -473,4 +466,5 @@ Built as part of learning:
 ---
 
 *Last Updated: December 15, 2025*
+
 
