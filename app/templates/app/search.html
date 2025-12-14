@@ -1,0 +1,68 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Search Results{% endblock title %}
+
+{% block main-content %}
+
+<div class='container my-5'>
+    <div class="row">
+        <div class="col-12">
+            <h2 class="mb-4">Search Results {% if query %}for "{{ query }}"{% endif %}</h2>
+
+            {% if products %}
+            <p class="text-muted">Found {{ products.count }} product(s)</p>
+            <div class="row">
+                {% for product in products %}
+                <div class="col-md-3 col-sm-6 text-center mb-4">
+                    <a href="{% url 'product-detail' product.id %}" class="text-decoration-none">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                {% if product.product_image %}
+                                <img src="{{ product.product_image.url }}" class="card-img-top mb-3"
+                                    alt="{{ product.title }}" style="height: 200px; object-fit: cover;">
+                                {% else %}
+                                <img src="{% static 'app/images/product/Neel.png' %}" class="card-img-top mb-3"
+                                    alt="placeholder" style="height: 200px; object-fit: cover;">
+                                {% endif %}
+                                <h5 class="card-title text-dark">{{ product.title }}</h5>
+                                <p class="card-text">
+                                    <span class="text-danger fw-bold h5">€{{ product.discounted_price }}</span>
+                                    <small class="text-muted text-decoration-line-through ms-2">€{{
+                                        product.selling_price }}</small>
+                                </p>
+                                <span class="badge bg-success">{{ product.get_category_display }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            {% if query %}
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle"></i> No products found matching "{{ query }}". Try a different search
+                term.
+            </div>
+            {% else %}
+            <div class="alert alert-warning" role="alert">
+                <i class="fas fa-exclamation-triangle"></i> Please enter a search term to find products.
+            </div>
+            {% endif %}
+
+            <div class="mt-4">
+                <h4>Browse by Category</h4>
+                <div class="list-group mt-3">
+                    <a href="{% url 'category' 'CR' %}" class="list-group-item list-group-item-action">Curd</a>
+                    <a href="{% url 'category' 'MS' %}" class="list-group-item list-group-item-action">Milkshake</a>
+                    <a href="{% url 'category' 'LS' %}" class="list-group-item list-group-item-action">Lassi</a>
+                    <a href="{% url 'category' 'GH' %}" class="list-group-item list-group-item-action">Ghee</a>
+                    <a href="{% url 'category' 'PN' %}" class="list-group-item list-group-item-action">Paneer</a>
+                    <a href="{% url 'category' 'CZ' %}" class="list-group-item list-group-item-action">Cheese</a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

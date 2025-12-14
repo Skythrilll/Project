@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Category{% endblock title %}
+
+{% block main-content %}
+
+<div class='container my-5'>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="list-group">
+                {% comment %} Show category list (code, label) and link to each category view {% endcomment %}
+                {% for code,label in categories %}
+                <a href="{% url 'category' code %}"
+                    class="list-group-item list-group-item-action {% if current_category == label %}active{% endif %}">
+                    {{ label }}
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="row">
+                {% for prod in product %}
+                <div class="col-md-6 col-sm-6 text-center mb-4">
+                    <a href="{% url 'product-detail' prod.id %}" class="btn">
+                        <div>
+                            <img src="{{prod.product_image.url}}" width="300px" height="200px" alt="" />
+                            <div class="fw-bold">{{prod.title}}</div>
+                            <div class="fw-bold text-danger">
+                                Euros.{{prod.discounted_price}}/
+                                <small class="fw-light text-decoration-linethrough">{{prod.selling_price}}</small>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock main-content %}

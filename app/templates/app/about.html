@@ -1,0 +1,93 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}About{% endblock title %}
+
+{% block banner_slider %}
+<div id="carouselAbout" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item ">
+            <img src="{% static 'app/images/banner/b1.jpg' %}" class="d-block w-100" alt="banner_img">
+        </div>
+        <div class="carousel-item active">
+            <img src="{% static 'app/images/banner/b2.jpg' %}" class="d-block w-100" alt="banner_img">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/images/banner/b3.jpg' %}" class="d-block w-100" alt="banner_img">
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'app/images/banner/b4.jpg' %}" class="d-block w-100" alt="banner_img">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAbout" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselAbout" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+{% endblock banner_slider %}
+
+{% block main-content %}
+
+<div class="container my-5">
+    <!-- About Us Section -->
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="text-center mb-4 display-6 fw-bold text-success">About Us</h2>
+                <p class="lead text-center text-muted">
+                    This is a public limited company having its registered and corporate office at Dublin, Ireland.
+                    The Company was incorporated in the year 2018 and production commenced in 2020.
+                    This is one of the fastest growing public listed companies in Dublin, dedicated to delivering
+                    excellence in dairy and grocery products.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <!-- Mission Section -->
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="text-center mb-4 display-6 fw-bold text-success">Our Mission</h2>
+                <p class="lead text-center text-muted">
+                    Our mission is to provide premium quality dairy and grocery products that nourish families and
+                    communities. We are committed to delivering fresh, pure, and nutritious food items while maintaining
+                    the highest standards of quality, hygiene, and sustainability. We believe in building trust through
+                    transparency, ethical practices, and customer-centric innovation to make wholesome nutrition
+                    accessible to everyone.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="my-5">
+
+    <!-- Vision Section (Bonus) -->
+    <section class="mb-5">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <h2 class="text-center mb-4 display-6 fw-bold text-success">Our Vision</h2>
+                <p class="lead text-center text-muted">
+                    To become a globally recognized leader in the dairy and grocery industry, known for innovation,
+                    sustainability, and unwavering commitment to customer satisfaction. We envision a future where
+                    our products are the preferred choice for families seeking quality, trust, and nutritional
+                    excellence.
+                </p>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock main-content %}
