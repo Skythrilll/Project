@@ -68,6 +68,7 @@ A full-featured online grocery store built with Django 3.2.25, specializing in p
 - **Django 3.2.25** - Web Framework
 - **Python 3.7.1** - Programming Language
 - **Django administration** - Database (Development)
+- **SQLite Database(for data storage)
 
 
 ### Frontend
@@ -466,5 +467,6 @@ Built as part of learning:
 ---
 
 *Last Updated: December 15, 2025*
+
 
 
